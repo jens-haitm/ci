@@ -3,16 +3,13 @@ jobs:
   build:
     docker:
       - image: circleci/node:12.16.1
-
-    working_directory: ~/repo
-
     steps:
       - checkout
       - run:
-        name: The First Step
-        command: |
-          echo 'Hello World!'
-          echo 'This is the delivery pipeline'
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
       - run:
           name: Code Has Arrived
           command: |
@@ -20,8 +17,3 @@ jobs:
             echo '^^^That should look familiar^^^'
       - run: npm install
       - run: npm test
-# workflows:curl -fLSs https://raw.githubusercontent.com/CircleCI-Public/circleci-cli/master/install.sh | bash
-
-#     build-and-test:
-#       jobs:
-#         - build-and-test
